@@ -11,22 +11,22 @@ num_cards = 26
 card_left = range(0, num_cards + 1)
 all_scenario = product(*([card_left] * 2))
 
-pay_off = {s: None for s in all_scenario}
+pay_off = {}
 
-for k in pay_off.keys():
-    if k[0] == 0:
-        pay_off[k] = 0
+for s in all_scenario:
+    if s[0] == 0:
+        pay_off[s] = 0
         continue
 
-    if k[1] == 0:
-        pay_off[k] = k[0]
+    if s[1] == 0:
+        pay_off[s] = s[0]
         continue
 
     p = (
-        k[0] * (1 + pay_off[(k[0] - 1, k[1])]) + k[1] * (-1 + pay_off[(k[0], k[1] - 1)])
-    ) / (k[0] + k[1])
+        s[0] * (1 + pay_off[(s[0] - 1, s[1])]) + s[1] * (-1 + pay_off[(s[0], s[1] - 1)])
+    ) / (s[0] + s[1])
 
-    pay_off[k] = max(p, 0)
+    pay_off[s] = max(p, 0)
 
 # Optimal stopping is refering to the pay_off table and
 # 1. draw whenever the expected future pay off is not zero.
