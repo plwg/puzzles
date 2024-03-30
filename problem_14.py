@@ -4,6 +4,7 @@
 # What is the optimal stopping rule in terms of maximizing expected payoff?
 # Also, what is the expected payoff following this optimal rule?
 # https://gwern.net/problem-14
+# https://puzzles.nigelcoldwell.co.uk/fourteen.htm
 
 from itertools import product
 
