@@ -19,17 +19,17 @@ pay_off = {}
 for s in all_scenario:
     if s[0] == 0:
         pay_off[s] = 0
-        continue
 
-    if s[1] == 0:
+    elif s[1] == 0:
         pay_off[s] = s[0]
-        continue
 
-    p = (
-        s[0] * (1 + pay_off[(s[0] - 1, s[1])]) + s[1] * (-1 + pay_off[(s[0], s[1] - 1)])
-    ) / (s[0] + s[1])
+    else:
+        p = (
+            s[0] * (1 + pay_off[(s[0] - 1, s[1])])
+            + s[1] * (-1 + pay_off[(s[0], s[1] - 1)])
+        ) / (s[0] + s[1])
 
-    pay_off[s] = max(p, 0)
+        pay_off[s] = max(p, 0)
 
 # Optimal stopping is refering to the pay_off table and
 # 1. draw whenever the expected future pay off is not zero.
