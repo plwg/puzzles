@@ -9,13 +9,9 @@ from itertools import product
 
 num_cards = 26
 card_left = range(0, num_cards + 1)
-all_scenario = product(*[card_left] * 2)
+all_scenario = product(*([card_left] * 2))
 
-pay_off = {}
-
-for scenario in all_scenario:
-    pay_off[scenario] = None
-
+pay_off = {s: None for s in all_scenario}
 
 for k in pay_off.keys():
     if k[0] == 0:
