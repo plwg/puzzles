@@ -9,7 +9,7 @@ from itertools import product
 
 num_cards = 26
 card_left = range(0, num_cards + 1)
-all_scenario = product(card_left, card_left)
+all_scenario = product(*[card_left] * 2)
 
 pay_off = {}
 
@@ -32,6 +32,9 @@ for k in pay_off.keys():
 
     pay_off[k] = max(p, 0)
 
-print(pay_off[(26, 26)])
+# Optimal stopping is refering to the pay_off table and
+# 1. draw whenever the expected future pay off is not zero.
+# 2. stop drawing if the expected future pay off is zero
 
-# Optimal stopping is refering to the pay_off table and draw whenever the expected future pay off is not zero.
+# Expected return of optimal pay
+print(pay_off[(26, 26)])
