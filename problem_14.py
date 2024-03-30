@@ -33,3 +33,5 @@ for k in pay_off.keys():
     pay_off[k] = max(p, 0)
 
 print(pay_off[(26, 26)])
+
+# Optimal stopping is refering to the pay_off table and draw whenever the expected future pay off is not zero.
