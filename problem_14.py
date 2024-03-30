@@ -12,6 +12,8 @@ num_cards = 26
 card_left = range(0, num_cards + 1)
 all_scenario = product(*([card_left] * 2))
 
+# For example, (23, 21) denotes 23 good cards and 21 bad cards left.
+
 pay_off = {}
 
 for s in all_scenario:
