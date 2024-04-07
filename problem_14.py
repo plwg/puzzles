@@ -35,5 +35,5 @@ for s in all_scenario:
 # 1. draw whenever the expected future pay off is not zero.
 # 2. stop drawing if the expected future pay off is zero
 
-# Expected return of optimal pay
+# Expected return of optimal play
 print(pay_off[(num_cards, num_cards)])
